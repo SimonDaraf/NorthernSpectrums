@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="NorthernSpectrums.MVVM.View.Racks.EqRackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NorthernSpectrums.MVVM.View.Racks"
+             xmlns:converters="clr-namespace:NorthernSpectrums.MVVM.Model.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="258" d:DesignWidth="1840">
+    <UserControl.Resources>
+        <converters:SliderHeightConverter x:Key="SliderHeightConverter"/>
+        <converters:BandOneMarginConverter x:Key="BandOneMarginConverter"/>
+        <converters:BandTwoMarginConverter x:Key="BandTwoMarginConverter"/>
+        <converters:BandThreeMarginConverter x:Key="BandThreeMarginConverter"/>
+        <converters:BandFourMarginConverter x:Key="BandFourMarginConverter"/>
+        <converters:BandFiveMarginConverter x:Key="BandFiveMarginConverter"/>
+        <converters:BandSixMarginConverter x:Key="BandSixMarginConverter"/>
+        <converters:BandSevenMarginConverter x:Key="BandSevenMarginConverter"/>
+        <converters:BandEightMarginConverter x:Key="BandEightMarginConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Image x:Name="ImageSource" Source="pack://application:,,,/NorthernSpectrums;component/Images/8BandEqRack.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Slider x:Name="BandOne" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandOneMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandOneValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandTwo" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandTwoMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandTwoValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandThree" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandThreeMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandThreeValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandFour" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandFourMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandFourValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandFive" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandFiveMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandFiveValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandSix" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandSixMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandSixValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandSeven" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandSevenMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandSevenValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+        <Slider x:Name="BandEight" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Minimum="0" Maximum="1"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource BandEightMarginConverter}}"
+                Height="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource SliderHeightConverter}}"
+                Value="{Binding BandEightValue}"
+                Style="{StaticResource RackSliderStyle}"/>
+    </Grid>
+</UserControl>

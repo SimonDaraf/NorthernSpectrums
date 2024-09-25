@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ApplicationIcon>Icons\Window\ns.ico</ApplicationIcon>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\Window\ns-logo.png" />
+    <None Remove="Icons\Window\ns.ico" />
+    <None Remove="Images\8BandEQRack.png" />
+    <None Remove="Images\knob_point_wh.png" />
+    <None Remove="Images\NS_Threader.png" />
+    <None Remove="Images\ReverbRack.png" />
+    <None Remove="SplashScreen\splashimage.png" />
+    <None Remove="Images\knob_point.png" />
+    <None Remove="Images\NS_Delay.png" />
+    <None Remove="Images\NS_Distortion.png" />
+    <None Remove="Images\NS_Overdrive.png" />
+    <None Remove="Images\NS_Volume.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="MVVM\View\Styles\PedalKnob\PedalKnobStyle.xaml" />
+    <Page Remove="MVVM\View\Themes\Dark.xaml" />
+    <Page Remove="MVVM\View\Themes\Light.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MessagePack" Version="2.5.140" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\Window\ns.ico" />
+    <Resource Include="Icons\Window\ns-logo.png" />
+    <Resource Include="Images\8BandEQRack.png" />
+    <Resource Include="Images\knob_point_wh.png" />
+    <Resource Include="Images\NS_Threader.png" />
+    <Resource Include="Images\ReverbRack.png" />
+    <Resource Include="MVVM\View\Styles\PedalKnob\PedalKnobStyle.xaml" />
+    <Resource Include="MVVM\View\Themes\Dark.xaml" />
+    <Resource Include="MVVM\View\Themes\Light.xaml" />
+    <Resource Include="Images\knob_point.png" />
+    <Resource Include="Images\NS_Delay.png" />
+    <Resource Include="Images\NS_Distortion.png" />
+    <Resource Include="Images\NS_Overdrive.png" />
+    <Resource Include="Images\NS_Volume.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="SplashScreen\splashimage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="NorthernSpectrums.MVVM.View.Racks.ReverbRackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NorthernSpectrums.MVVM.View.Racks"
+             xmlns:converters="clr-namespace:NorthernSpectrums.MVVM.Model.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="258" d:DesignWidth="1840">
+    <UserControl.Resources>
+        <converters:KnobSizeConverter x:Key="KnobSizeConverter"/>
+        <converters:KnobLConverter x:Key="KnobLConverter"/>
+        <converters:KnobMConverter x:Key="KnobMConverter"/>
+        <converters:KnobRConverter x:Key="KnobRConverter"/>
+    </UserControl.Resources>
+    <Grid x:Name="GridSource">
+        <Image x:Name="ImageSource" Source="pack://application:,,,/NorthernSpectrums;component/Images/ReverbRack.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button x:Name="LevelKnob" Style="{StaticResource PedalKnobStyle}" Content="pack://application:,,,/NorthernSpectrums;component/Images/knob_point_wh.png" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Width="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource KnobSizeConverter}}"
+                Height="{Binding ElementName=LevelKnob, Path=ActualWidth}"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource KnobLConverter}}">
+            <Button.RenderTransform>
+                <RotateTransform Angle="{Binding LevelKnobRotation, Mode=TwoWay}"/>
+            </Button.RenderTransform>
+            <Button.RenderTransformOrigin>
+                <Point X="0.5" Y="0.5"/>
+            </Button.RenderTransformOrigin>
+        </Button>
+
+        <Button x:Name="DecayKnob" Style="{StaticResource PedalKnobStyle}" Content="pack://application:,,,/NorthernSpectrums;component/Images/knob_point_wh.png" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Width="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource KnobSizeConverter}}"
+                Height="{Binding ElementName=DecayKnob, Path=ActualWidth}"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource KnobMConverter}}">
+            <Button.RenderTransform>
+                <RotateTransform Angle="{Binding DecayKnobRotation, Mode=TwoWay}"/>
+            </Button.RenderTransform>
+            <Button.RenderTransformOrigin>
+                <Point X="0.5" Y="0.5"/>
+            </Button.RenderTransformOrigin>
+        </Button>
+
+        <Button x:Name="TimeKnob" Style="{StaticResource PedalKnobStyle}" Content="pack://application:,,,/NorthernSpectrums;component/Images/knob_point_wh.png" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Width="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource KnobSizeConverter}}"
+                Height="{Binding ElementName=TimeKnob, Path=ActualWidth}"
+                Margin="{Binding ElementName=ImageSource, Path=ActualWidth, Converter={StaticResource KnobRConverter}}">
+            <Button.RenderTransform>
+                <RotateTransform Angle="{Binding TimeKnobRotation, Mode=TwoWay}"/>
+            </Button.RenderTransform>
+            <Button.RenderTransformOrigin>
+                <Point X="0.5" Y="0.5"/>
+            </Button.RenderTransformOrigin>
+        </Button>
+    </Grid>
+</UserControl>

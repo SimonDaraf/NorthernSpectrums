@@ -1,0 +1,30 @@
+﻿<window:SettingsApplicationWindow x:Class="NorthernSpectrums.MVVM.View.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:window="clr-namespace:NorthernSpectrums.MVVM.ViewModel.ApplicationWindow.SettingsApplicationWindow"
+        mc:Ignorable="d"
+        Icon="/Icons/Window/ns.ico"
+        Title="Preferences" Height="600" Width="450"
+        Style="{StaticResource ApplicationSettingsWindow}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" Background="{DynamicResource Tab}">
+            <ToggleButton Style="{StaticResource ToggleButtonStyle}" Content="Audio" Margin="10,0"
+                          Command="{Binding NavigateToAudio}"
+                          IsChecked="{Binding AudioViewActive}"/>
+            <ToggleButton Style="{StaticResource ToggleButtonStyle}" Content="General" Margin="0,0"
+                          Command="{Binding NavigateToGeneral}"
+                          IsChecked="{Binding GeneralViewActive}"/>
+        </StackPanel>
+        
+        <ContentControl Content="{Binding NavigationService.CurrentView}" Grid.Row="1">
+
+        </ContentControl>
+    </Grid>
+</window:SettingsApplicationWindow>

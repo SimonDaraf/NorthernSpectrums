@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataObject x:Key="ApplicationTheme"/>
+    <SolidColorBrush Color="#ffffff" x:Key="Background"/>
+    <SolidColorBrush Color="#bdd1de" x:Key="Tab"/>
+    <SolidColorBrush Color="#88aac2" x:Key="TabButtonHover"/>
+    <SolidColorBrush Color="#ffffff" x:Key="Dropdown"/>
+    <SolidColorBrush Color="#858e94" x:Key="DropdownBorder"/>
+    <SolidColorBrush Color="#c5eefc" x:Key="DropdownSelected"/>
+    <SolidColorBrush Color="#000000" x:Key="Foreground"/>
+</ResourceDictionary>

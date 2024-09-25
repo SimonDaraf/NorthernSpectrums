@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="NorthernSpectrums.MVVM.View.PedalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NorthernSpectrums.MVVM.View"
+             xmlns:converter="clr-namespace:NorthernSpectrums.MVVM.Model.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <converter:PedalHeightConverter x:Key="PedalHeightConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="{DynamicResource Tab}" CornerRadius="25,25,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--PEDALS-->
+                    <Border Margin="40">
+                        <ContentPresenter x:Name="PresenterOne" Content="{Binding SpotOneModel}"/>
+                    </Border>
+                    <Border Grid.Column="1" Margin="40">
+                        <ContentPresenter Content="{Binding SpotTwoModel}"/>
+                    </Border>
+                    <Border Grid.Column="2" Margin="40">
+                        <ContentPresenter Content="{Binding SpotThreeModel}"/>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!--CONTROLS-->
+                <Border Grid.Row="1" Grid.Column="0">
+                    <ComboBox HorizontalAlignment="Center" Width="200" Height="25" Style="{StaticResource DropdownStyle}" ItemsSource="{Binding PackageSource}" SelectedItem="{Binding SpotOneSelection}"/>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1">
+                    <ComboBox HorizontalAlignment="Center" Width="200" Height="25" Style="{StaticResource DropdownStyle}" ItemsSource="{Binding PackageSource}" SelectedItem="{Binding SpotTwoSelection}"/>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="2">
+                    <ComboBox HorizontalAlignment="Center" Width="200" Height="25" Style="{StaticResource DropdownStyle}" ItemsSource="{Binding PackageSource}" SelectedItem="{Binding SpotThreeSelection}"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,77 @@
+﻿<Application x:Class="NorthernSpectrums.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel="clr-namespace:NorthernSpectrums.MVVM.ViewModel"
+             xmlns:pedals="clr-namespace:NorthernSpectrums.MVVM.ViewModel.Pedals"
+             xmlns:amps="clr-namespace:NorthernSpectrums.MVVM.ViewModel.Amps"
+             xmlns:racks="clr-namespace:NorthernSpectrums.MVVM.ViewModel.Racks"
+             xmlns:view="clr-namespace:NorthernSpectrums.MVVM.View"
+             xmlns:pedalview="clr-namespace:NorthernSpectrums.MVVM.View.Pedals"
+             xmlns:ampview="clr-namespace:NorthernSpectrums.MVVM.View.Amps"
+             xmlns:rackview="clr-namespace:NorthernSpectrums.MVVM.View.Racks">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MVVM/View/Themes/Dark.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Window/ApplicationWindowToolbarDropdownStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Window/ApplicationWindowControlButtonStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Window/ApplicationWindowStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Components/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Components/DropdownStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Components/ToggleButtonStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Components/NavigationButtonStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Components/RackSliderStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/Components/VolumeBarStyle.xaml"/>
+                <ResourceDictionary Source="MVVM/View/Styles/PedalKnob/PedalKnobStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:AudioSettingsViewModel}">
+                <view:AudioView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GeneralSettingsViewModel}">
+                <view:GeneralView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:PedalViewModel}">
+                <view:PedalView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AmpViewModel}">
+                <view:AmpView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RackViewModel}">
+                <view:RackView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EndControlViewModel}">
+                <view:EndControlView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type pedals:EmptyPedalViewModel}">
+                <pedalview:EmptyPedal/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type pedals:VolumeViewModel}">
+                <pedalview:VolumePedal/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type pedals:DistortionViewModel}">
+                <pedalview:DistortionPedal/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type pedals:DelayViewModel}">
+                <pedalview:DelayPedal/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type amps:NSThreaderViewModel}">
+                <ampview:NSThreaderView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type racks:EmptyRackViewModel}">
+                <rackview:EmptyRackView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type racks:ReverbRackViewModel}">
+                <rackview:ReverbRackView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type racks:EqRackViewModel}">
+                <rackview:EqRackView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

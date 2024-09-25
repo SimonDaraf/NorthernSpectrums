@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="NorthernSpectrums.MVVM.View.CustomControls.MasterKnob"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NorthernSpectrums.MVVM.View.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="40">
+    <Border x:Name="BorderContainer">
+        <Grid>
+            <Path VerticalAlignment="Center" HorizontalAlignment="Center" Fill="{DynamicResource Foreground}"
+                  StrokeMiterLimit="1"
+                  StrokeThickness="5"
+                  Stroke="{DynamicResource Background}"
+                  Data="F1 M 293.000,148.000 C 293.000,228.081 228.081,293.000 148.000,293.000 C 67.919,293.000 3.000,228.081 3.000,148.000 C 3.000,67.919 67.919,3.000 148.000,3.000 C 228.081,3.000 293.000,67.919 293.000,148.000 Z M 158.000,38.000 C 158.000,43.523 153.523,48.000 148.000,48.000 C 142.477,48.000 138.000,43.523 138.000,38.000 C 138.000,32.477 142.477,28.000 148.000,28.000 C 153.523,28.000 158.000,32.477 158.000,38.000 Z"
+                  Stretch="Uniform"/>
+        </Grid>
+
+        <Border.RenderTransform>
+            <RotateTransform Angle="0"/>
+        </Border.RenderTransform>
+        <Border.RenderTransformOrigin>
+            <Point X="0.5" Y="0.5"/>
+        </Border.RenderTransformOrigin>
+    </Border>
+</UserControl>

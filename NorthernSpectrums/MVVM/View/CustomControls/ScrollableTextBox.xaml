@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="NorthernSpectrums.MVVM.View.CustomControls.ScrollableTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NorthernSpectrums.MVVM.View.CustomControls"
+             xmlns:converter="clr-namespace:NorthernSpectrums.MVVM.Model.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="140">
+    <UserControl.Resources>
+        <converter:PedalFontSizeConverter x:Key="PedalFontSizeConverter"/>
+    </UserControl.Resources>
+    <Border x:Name="Wrapper" BorderThickness="1" BorderBrush="{DynamicResource DropdownBorder}">
+        <Grid Background="{DynamicResource Dropdown}">
+            <TextBox x:Name="EditableBox" Background="Transparent" Text="120" Foreground="{DynamicResource Foreground}" VerticalAlignment="Center" 
+                     FontSize="{Binding ElementName=Wrapper, Path=ActualHeight, Converter={StaticResource PedalFontSizeConverter}}" BorderThickness="0"/>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="NorthernSpectrums.MVVM.View.Pedals.DistortionPedal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NorthernSpectrums.MVVM.View.Pedals"
+             xmlns:converter="clr-namespace:NorthernSpectrums.MVVM.Model.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="733" d:DesignWidth="438">
+    <UserControl.Resources>
+        <converter:PedalKnobScaleConverter x:Key="PedalKnobScaleConverter"/>
+        <converter:PedalKnobMarginConverter x:Key="PedalKnobMarginConverter"/>
+        <converter:PedalKnobLeftUpMarginConverter x:Key="PedalKnobLeftUpMarginConverter"/>
+        <converter:PedalKnobRightUpMarginConverter x:Key="PedalKnobRightUpMarginConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid>
+                <Image x:Name="SourcePedalImage" Source="pack://application:,,,/NorthernSpectrums;component/Images/NS_Distortion.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="LevelKnob" Style="{StaticResource PedalKnobStyle}" Content="pack://application:,,,/NorthernSpectrums;component/Images/knob_point.png" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Margin="{Binding ElementName=SourcePedalImage, Path=ActualWidth, Converter={StaticResource PedalKnobLeftUpMarginConverter}}"
+                Height="{Binding ElementName=SourcePedalImage, Path=ActualHeight, Converter={StaticResource PedalKnobScaleConverter}}"
+                Width="{Binding ElementName=LevelKnob, Path=ActualHeight}">
+                    <Button.RenderTransform>
+                        <RotateTransform Angle="{Binding LevelKnobRotation, Mode=TwoWay}"/>
+                    </Button.RenderTransform>
+                    <Button.RenderTransformOrigin>
+                        <Point X="0.5" Y="0.5"/>
+                    </Button.RenderTransformOrigin>
+                </Button>
+
+                <Button x:Name="GainKnob" Style="{StaticResource PedalKnobStyle}" Content="pack://application:,,,/NorthernSpectrums;component/Images/knob_point.png" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Margin="{Binding ElementName=SourcePedalImage, Path=ActualWidth, Converter={StaticResource PedalKnobRightUpMarginConverter}}"
+                        Height="{Binding ElementName=SourcePedalImage, Path=ActualHeight, Converter={StaticResource PedalKnobScaleConverter}}"
+                        Width="{Binding ElementName=GainKnob, Path=ActualHeight}">
+                    <Button.RenderTransform>
+                        <RotateTransform Angle="{Binding GainKnobRotation, Mode=TwoWay}"/>
+                    </Button.RenderTransform>
+                    <Button.RenderTransformOrigin>
+                        <Point X="0.5" Y="0.5"/>
+                    </Button.RenderTransformOrigin>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
