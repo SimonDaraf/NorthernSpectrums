@@ -12,7 +12,7 @@
   5. [Presets](#presets)
 
 ## Introduction <a name="introduction"></a>
-This repository shawcases the result of the 1DV613 Course from Linnaeus University.
+This repository showcases the result of the 1DV613 Course from Linnaeus University.
 During the course we worked on an individual project for 10 weeks. The aim of the course was to familiarize us with working on projects in a structured manner. Going from a project vision to
 working on implementation and testing in sprints, finally ending with deploying what we had at the end of the course.
 
